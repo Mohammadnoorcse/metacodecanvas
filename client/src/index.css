@@ -4,6 +4,10 @@
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --black:"#1F1E28";
+  --card:"#EAF0F3";
+  --white:"#FFFFFF";
+  --page:"#000A23";
 }
 
 .w{
