@@ -1,0 +1,48 @@
+/* navbar-star */
+.navbar{
+    background-color: black;
+    color: white;
+}
+
+.login-btn{
+    background-color: #2AA7FD;
+    border-radius: 4px;
+}
+.drop-item{
+    position: absolute;
+    top: 3rem;
+    background-color: #FFFFFF;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    color: black !important;
+    width: 10rem;
+    height: auto;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+}
+.drop-item a{
+    padding: 0.2rem 0;
+    /* border: 1px solid red; */
+    cursor: pointer;
+}
+.drop-item a:hover{
+    background-color:aliceblue;
+    border-radius: 4px;
+}
+.course-item{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    padding-top: 4px;
+    
+}
+@media(max-width:1620px){
+    .drop-item{
+        right: 0;
+    }
+}
+@media(max-width:430px){
+    .course-item{
+        display: none;
+    }
+}
