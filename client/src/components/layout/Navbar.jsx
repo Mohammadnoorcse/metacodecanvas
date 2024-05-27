@@ -8,7 +8,7 @@ const Navbar = () => {
   const login = true;
   return (
     <>
-     <div className="navbar width-100 w-center h-14" >
+     <div className="navbar width-100 w-center h-14 fixed top-0" >
       <div className="navbar-content container-content flex justify-between content-center">
          <div className="navbar-item-1 flex gap-5 justify-center content-center ">
             {/* <img src={logo} alt="logo" className=""/> */}
@@ -16,7 +16,7 @@ const Navbar = () => {
             <Link to="/" className="text-xl font-bold italic cursor-pointer">MetaCodeCanvas</Link>
             </div>
              <div className="gap-5 course-item ">
-             <Link to="/">Course</Link>
+              <Link to="/">Course</Link>
               <Link to="/">Blog</Link>
               <Link to="/">Discuss</Link>
              </div>
@@ -28,8 +28,6 @@ const Navbar = () => {
                 <Link to="/">Profile</Link>
                 <Link to="/">Profile</Link>
                 <Link to="/">Profile</Link>
-
-
               </div>
           
           </>:<>
