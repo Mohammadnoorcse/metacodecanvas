@@ -2,10 +2,15 @@
 import profile from "../../assets/profile.webp"
 import{Link} from "react-router-dom"
 import "./layout.css"
-import { useState } from "react"
+import { useState } from "react";
+import {useNavigate} from "react-router-dom";
+
 const Navbar = () => {
+  const navigate = useNavigate();
   const [drop,setDrop] = useState(false);
-  const login = true;
+
+  const login = false;
+ 
   return (
     <>
      <div className="navbar width-100 w-center h-14 fixed top-0" >
@@ -38,7 +43,7 @@ const Navbar = () => {
               </div>
           
           </>:<>
-          <button className="px-8 py-0.5 font-bold cursor-pointer login-btn">Login</button>
+          <button className="px-8 py-0.5 font-bold cursor-pointer login-btn" onClick={()=>navigate("/login")}>Login</button>
           
           </>}
 
