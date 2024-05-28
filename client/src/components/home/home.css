@@ -1,0 +1,27 @@
+/* home 1 start */
+.home1{
+    /* background-color: #EFE3F7; */
+    background-color: #282A35;
+    height: 40rem;
+    color: white !important;
+}
+.home1-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.details-btn{
+    background-color: #2493DF;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+@media (max-width:520px){
+    .home1{
+        height: 30rem;
+    }
+    .home1-content-1{
+        display: none;
+    }
+}
