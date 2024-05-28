@@ -36,6 +36,15 @@
     padding-top: 4px;
     
 }
+.select-item{
+    margin-top: 6px;
+    
+}
+.select-item select{
+    background-color: black !important;
+    outline: none;
+    /* border: 1px solid white; */
+}
 @media(max-width:1620px){
     .drop-item{
         right: 0;
