@@ -9,9 +9,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [drop,setDrop] = useState(false);
 
-  const login = false;
+  const user = false;
  
-  const login = false;
+  
   return (
     <>
      <div className="navbar width-100 w-center h-14 fixed top-0" >
@@ -35,7 +35,7 @@ const Navbar = () => {
        
         </select>
           </div>
-          {login?<>
+          {user?<>
               <img src={profile} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
               <div className={drop?"absolute  flex flex-col  gap-1 drop-item":"hidden"}>
                 <Link to="/">Profile</Link>
