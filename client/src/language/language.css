@@ -1,0 +1,15 @@
+.lanaguage{
+    background-color: #282A35;
+}
+.mobaile-sidebar{
+    display: none;
+}
+
+@media (max-width:600px) {
+    .sidebar{
+        display: none;
+    }
+    .mobaile-sidebar{
+        display: block;
+    }
+}
