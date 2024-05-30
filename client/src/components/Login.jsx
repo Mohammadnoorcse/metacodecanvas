@@ -11,12 +11,12 @@ function Login() {
             <form>
                 <div className="mb-4">
                     <label for="email" className="block text-sm font-medium text-white">Email</label>
-                    <input type="email" id="email" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                    <input placeholder='Enter Email' type="email" id="email" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
                 <div className="mb-4">
                     <label for="password" className="block text-sm font-medium text-white">Password</label>
                     <div className="relative">
-                        <input type="password" id="password" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                        <input placeholder='Enter Password' type="password" id="password" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                         <button type="button" className="absolute inset-y-0 right-0 px-4 py-2 text-blue-500">Show</button>
                     </div>
                     <a href="#" className="text-sm text-blue-400 hover:underline mt-2 inline-block">Forgot Password?</a>
