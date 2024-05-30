@@ -5,23 +5,29 @@ const Registration = () => {
     const navigate = useNavigate();
   return (
     <Fragment>
-      <div className="bg-gray-900 flex items-center justify-center min-h-screen">
+      <div className="bg-gray-900 flex items-center justify-center min-h-screen mt-7">
     <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-3xl font-bold text-center text-white mb-8">Sign Up</h2>
         <form>
             <div className="mb-4">
                 <label for="name" className="block text-sm font-medium text-white">Name</label>
-                <input type="text" id="name" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                <input placeholder="Enter Name" type="text" id="name" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
             <div className="mb-4">
                 <label for="email" className="block text-sm font-medium text-white">Email</label>
-                <input type="email" id="email" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                <input placeholder="Enter Email" type="email" id="email" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
             </div>
             <div className="mb-4">
                 <label for="password" className="block text-sm font-medium text-white">Password</label>
                 <div className="relative">
-                    <input type="password" id="password" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+                    <input placeholder="Enter Password" type="password" id="password" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                     <button type="button" className="absolute inset-y-0 right-0 px-4 py-2 text-blue-500">Show</button>
+                </div>
+            </div>
+            <div className="mb-4">
+                <label for="photo" className="block text-sm font-medium text-white">Photo</label>
+                <div className="relative">
+                    <input type="file" id="photo" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"/>
                 </div>
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">Sign up</button>

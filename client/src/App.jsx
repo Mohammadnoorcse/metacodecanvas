@@ -1,4 +1,5 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from "./page/Home";
 import Navbar from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
