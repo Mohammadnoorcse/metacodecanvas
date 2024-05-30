@@ -24,6 +24,9 @@
 .container-content{
   width: 1500px;
 }
+.bg-color{
+  background-color: #282A35; 
+}
 
 @media(max-width:1500px){
   .container-content{
