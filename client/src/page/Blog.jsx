@@ -16,12 +16,11 @@ function MyVerticallyCenteredModal(props) {
         <i>
           Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
           dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
+          consectetur ac, vestibulum at errors.
         </i><br/>
         <br/>
         <form>
           <div class="form-group">
-            {/* <label for="message-text" class="col-form-label">Reply To Problem</label> */}
             <textarea class="form-control" id="message-text" placeholder='Reply'></textarea>
             <button class="form-control btn btn-info mt-2">Reply</button>
           </div>

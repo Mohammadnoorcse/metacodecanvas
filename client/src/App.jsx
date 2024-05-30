@@ -6,6 +6,7 @@ import { Footer } from "./components/layout/Footer";
 import Blog from "./page/Blog";
 import Login from "./components/Login"
 import Registration from "./components/Registration";
+import Language from "./language/Language";
 const App = () => {
   return (
     <>
@@ -15,10 +16,10 @@ const App = () => {
 
         <Route path="/" element={<Home/>}/>
         <Route path="/blog" element={<Blog/>}/>
-        <Route path="/" element={<Home/>}/>
+        {/* <Route path="/" element={<Home/>}/> */}
         <Route path="/login" element={<Login/>}/>
         <Route path="/registration" element={<Registration/>}/>
-        
+        <Route path="/language/:id" element={<Language/>}/>
         
 
        </Routes>
