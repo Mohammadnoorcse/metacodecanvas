@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { FaComments } from "react-icons/fa";
 import Modal from 'react-bootstrap/Modal';
+import { Link,  } from 'react-router-dom';
+
 
 
 function MyVerticallyCenteredModal(props) {
@@ -44,8 +46,9 @@ const Blog = () => {
 
   return (
     <Fragment>
+        <Link to="/blogDetails">
         <div className="bg-gray-900 text-white mt-5">
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto p-4" >
           <h1 className="text-4xl text-center mb-6"></h1>
           <div className="flex justify-end mb-6">
               <input type="text" placeholder="Search" className="w-48 p-2 text-black rounded-l-md"/>
@@ -67,6 +70,7 @@ const Blog = () => {
           </div> */}
       </div>
     </div>
+        </Link>
 
       <MyVerticallyCenteredModal
         show={modalShow}
