@@ -21,6 +21,7 @@ import Profile from "./page/Profile";
 import CourseHome from "./page/CourseHome";
 import Contest from "./page/Contest";
 import Quiz from "./components/quiz/Quiz";
+import BlogDetails from "./page/BlogDetails";
 
 
 const App = () => {
