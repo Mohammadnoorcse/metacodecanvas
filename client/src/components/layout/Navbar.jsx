@@ -37,7 +37,7 @@ const Navbar = () => {
           {user?admin?<>
               <img src={profile} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
               <div className={drop?"absolute  flex flex-col  gap-1 drop-item":"hidden"}>
-                <Link to="/">Profile</Link>
+                <Link to="/profile">Profile</Link>
                 <Link to="/deshboard">Deshboard</Link>
                 <Link to="/">Profile</Link>
               </div>
@@ -46,7 +46,7 @@ const Navbar = () => {
           <>
           <img src={profile} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
           <div className={drop?"absolute  flex flex-col  gap-1 drop-item":"hidden"}>
-            <Link to="/">Profile</Link>
+            <Link to="/profile">Profile</Link>
             <Link to="/">Profile</Link>
             <Link to="/">Profile</Link>
           </div>
