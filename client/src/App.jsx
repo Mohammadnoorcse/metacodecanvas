@@ -17,7 +17,6 @@ import Discussion from "./components/deshboard/Discussion";
 import DiscussionCreate from "./components/deshboard/DiscussionCreate";
 import Course from "./components/deshboard/Course";
 import CourseCreate from "./components/deshboard/CourseCreate";
-import BlogDetails from "./page/BlogDetails";
 
 const App = () => {
   return (
@@ -32,8 +31,10 @@ const App = () => {
         <Route path="/login" element={<Login/>}/>
         <Route path="/registration" element={<Registration/>}/>
         <Route path="/language/:id" element={<Language/>}/>
-        <Route path="/deshboard" element={<Deshboard/>}/>
+        <Route path="/profile" element={<Profile/>}/>
 
+
+        <Route path="/deshboard" element={<Deshboard/>}/>
         <Route path="/deshboard/user/all" element={<User/>}/>
         <Route path="/deshboard/blog/create" element={<BlogCreate/>}/>
         <Route path="/deshboard/blog/all" element={<BlogDeshboard/>}/>

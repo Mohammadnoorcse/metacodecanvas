@@ -31,7 +31,7 @@ const BlogDetails = () => {
 
           {/* Comments Section */}
           <div className="space-y-4">
-            {/* Single Comment Card */}
+            {/* Single Comment */}
             <div className="bg-gray-800 p-4 rounded-lg">
               <div className="mb-2 flex justify-between items-center">
                 <span className="font-semibold">User2</span>
@@ -130,7 +130,7 @@ const BlogDetails = () => {
 
           <section className='mt-3'>
         <div className=''>
-          <ReactPaginate
+          <ReactPaginate 
             previousLabel={"previous"}
             nextLabel={"next"}
             breakLabel={"..."}
