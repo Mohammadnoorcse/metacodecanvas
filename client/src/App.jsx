@@ -18,6 +18,10 @@ import DiscussionCreate from "./components/deshboard/DiscussionCreate";
 import Course from "./components/deshboard/Course";
 import CourseCreate from "./components/deshboard/CourseCreate";
 import Profile from "./page/Profile";
+import CourseHome from "./page/CourseHome";
+import Contest from "./page/Contest";
+import Quiz from "./components/quiz/Quiz";
+
 
 const App = () => {
   return (
@@ -27,7 +31,10 @@ const App = () => {
        <Routes>
 
         <Route path="/" element={<Home/>}/>
+        <Route path="/course" element={<CourseHome/>}/>
         <Route path="/blog" element={<Blog/>}/>
+        <Route path="/contest" element={<Contest/>}/>
+        <Route path="/contest/:title" element={<Quiz/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/registration" element={<Registration/>}/>
         <Route path="/language/:id" element={<Language/>}/>

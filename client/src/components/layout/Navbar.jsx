@@ -23,7 +23,7 @@ const Navbar = () => {
              <div className="gap-5 course-item ">
               <Link to="/course">Course</Link>
               <Link to="/blog">Blog</Link>
-              <Link to="/">Discuss</Link>
+              <Link to="/contest">Contest</Link>
              </div>
          </div>
          <div className="navbar-item-2 flex gap-5 justify-center content-center relative">
