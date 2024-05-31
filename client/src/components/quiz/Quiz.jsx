@@ -15,6 +15,7 @@ import{useParams} from "react-router-dom"
     },
     {  
         // headerName
+        // code
         questionText: 'Who is CEO of Tesla?',
         answerOptions: [
             { answerText: 'Jeff Bezos', isCorrect: false },

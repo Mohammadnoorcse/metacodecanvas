@@ -35,6 +35,7 @@ const App = () => {
         <Route path="/blog" element={<Blog/>}/>
         <Route path="/contest" element={<Contest/>}/>
         <Route path="/contest/:title" element={<Quiz/>}/>
+        <Route path="/blogDetails" element={<BlogDetails/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/registration" element={<Registration/>}/>
         <Route path="/language/:id" element={<Language/>}/>
@@ -51,8 +52,6 @@ const App = () => {
         <Route path="/deshboard/discussion/create" element={<DiscussionCreate/>}/>
         <Route path="/deshboard/course/all" element={<Course/>}/>
         <Route path="/deshboard/course/create" element={<CourseCreate/>}/>
-
-        
 
        </Routes>
        <Footer/>
