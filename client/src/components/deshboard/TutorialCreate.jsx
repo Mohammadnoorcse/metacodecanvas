@@ -12,14 +12,13 @@ const TutorialCreate = () => {
   const [codeItem,setCodeItem] = useState(false);
 
   const headeries = [
-    "Beneficial Garden Friends",
-    "Mulch",
-    "Gardening Lifestyle",
-    "Gardening Tips & Information",
-    "Plant Propagation",
-    "Soil, Fixes & Fertilizers",
-    "Watering",
-    "Composting",
+    "html",
+    "css",
+    "python",
+    "c",
+    "c++",
+    "java",
+    "javascript",
     
   ];
 
@@ -35,9 +34,9 @@ const TutorialCreate = () => {
     };
 
   return (
-    <div className="w-full min-h-screen w-center bg-color mt-14">
+    <div className="w-full min-h-screen w-center bg-color">
       <div className="container-content flex justify-center items-center flex-col gap-2">
-        <h1 className="font-bold text-gray-400 py-5">Tutorial Create</h1>
+        <h1 className="text-white text-xl font-bold pt-3 text-center">Tutorial Create</h1>
         <form action="" className="w-full md:w-[60%] max-h-screen flex flex-col gap-3 bg-gray-900 rounded-xl mb-[1rem] p-[1rem] overflow-y-auto scrollbar-hide">
 
             <div className="w-full ">
