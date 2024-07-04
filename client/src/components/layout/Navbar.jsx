@@ -4,6 +4,7 @@ import{Link} from "react-router-dom"
 import "./layout.css"
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
+import { getUserDetails, removeUserSessions } from "../../Helper/SessionHelperUser";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,6 +12,13 @@ const Navbar = () => {
 
   const user = true;
   const admin = true;
+
+  const UserDetails=getUserDetails();
+
+  const onLogout=()=>{
+    removeUserSessions();
+}
+
   return (
     <>
      <div className="navbar width-100 w-center h-14 fixed top-0 z-30" >
@@ -40,6 +48,11 @@ const Navbar = () => {
                 <Link to="/profile">Profile</Link>
                 <Link to="/deshboard">Deshboard</Link>
                 <Link to="/">Profile</Link>
+                {UserDetails ? (
+                <Link to={''} onClick={onLogout}>Logout</Link>
+                ) : (
+                  <Link to={'/login'}>Login</Link>
+                )}
               </div>
           
           </>:

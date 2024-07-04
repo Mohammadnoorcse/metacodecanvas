@@ -9,109 +9,109 @@ export const HeaderCard =[
     {
      _id:1,
       icon:html,
-      name:"Html",
+      name:"html",
       bg:"#F3ECEA"
     },
     {
      _id:2,
       icon:css,
-      name:"CSS",
+      name:"css",
       bg:"#C8DBD0"
     },
     {
      _id:3,
       icon:js,
-      name:"Javascript",
+      name:"javascript",
       bg:"#96D4D4"
     },
     {
      _id:4,
       icon:sql,
-      name:"SQL",
+      name:"sql",
       bg:"#EAB1B9"
     },
     {
      _id:5,
       icon:python,
-      name:"Python",
+      name:"python",
       bg:"#F3ECEA"
     },
     {
      _id:6,
       icon:react,
-      name:"React",
+      name:"react",
       bg:"#D9EEE1"
     },
     {
      _id:7,
       icon:html,
-      name:"Html",
+      name:"html",
       bg:"#8BC3C4"
     },
     {
      _id:8,
       icon:css,
-      name:"CSS",
+      name:"css",
       bg:"#FFC0C7"
     },
     {
      _id:9,
       icon:js,
-      name:"Javascript",
+      name:"javascript",
       bg:"#FFF4A3"
     },
     {
      _id:10,
       icon:sql,
-      name:"SQL",
+      name:"sql",
       bg:"#DFD9D8"
     },
     {
      _id:11,
       icon:python,
-      name:"Python",
+      name:"python",
       bg:"#C8DBD0"
     },
     {
      _id:12,
       icon:react,
-      name:"React",
+      name:"react",
       bg:"#96D4D4"
     },
     {
      _id:13,
       icon:html,
-      name:"Html",
+      name:"html",
       bg:"#F3ECEA"
     },
     {
      _id:14,
       icon:css,
-      name:"CSS",
+      name:"css",
       bg:"#EAB1B9"
     },
     {
      _id:15,
       icon:js,
-      name:"Javascript",
+      name:"javascript",
       bg:"#EAE098"
     },
     {
      _id:16,
       icon:sql,
-      name:"SQL",
+      name:"sql",
       bg:"#EAB1B9"
     },
     {
      _id:17,
       icon:python,
-      name:"Python",
+      name:"python",
       bg:"#F3ECEA"
     },
     {
      _id:18,
       icon:react,
-      name:"React",
+      name:"react",
       bg:"#D9EEE1"
     },
     
