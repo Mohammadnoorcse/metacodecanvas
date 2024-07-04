@@ -55,3 +55,103 @@ export function LoginRequest(Email, Password) {
             return false;
         });
 }
+
+//blog post request...
+export function BlogPostRequest(UserEmail,Title,Description){
+    let URL=BaseUrl+"/blogpost";
+    let PostBody={UserEmail:UserEmail,Title:Title,Description:Description}
+
+    return Axios.post(URL,PostBody).then((res)=>{
+        if(res.status===200){
+            return true;
+        }else{
+            return false;
+        }
+    }).catch((err)=>{
+        ErrorToast("Something Went Wrong")
+        return false;
+    })
+}
+
+
+//Read user blog..
+export function FilterBlogByEmail(Email) {
+    const URL = `${BaseUrl}/ReadUserBlog/${Email}`;
+    return Axios.get(URL)
+      .then((res) => {
+        if (res.status === 200) {
+          return { data: res.data['data'], count: res.data['count'] };
+        } else {
+          return false;
+        }
+      })
+      .catch((err) => {
+        return false;
+      });
+  }
+
+  //filter blog by id
+  export function FilterBlogById(id){
+    const URL = `${BaseUrl}/ReadBlogById/${id}`;
+    return Axios.get(URL).then((res)=>{
+
+        if(res.status===200){
+            return res.data['data'];
+        }else{
+            return false
+        }
+
+    }).catch((err)=>{
+        return false
+    })
+}
+
+  // search Blog
+  export const BlogSearchRequest = (searchTerm) => {
+    const URL = `${BaseUrl}/blogSearch?searchTerm=${searchTerm}`;
+    return Axios.get(URL).then((res) => {
+      if (res.status === 200) {
+        return Array.isArray(res.data['data']) ? res.data['data'] : [];
+      } else {
+        return [];
+      }
+    }).catch((err) => {
+      console.error(err);
+      return [];
+    });
+  };
+  
+  export function FilterCommentById(id) {
+    const URL = `${BaseUrl}/ReadCommentById/${id}`;
+    return Axios.get(URL)
+      .then((res) => {
+        if (res.status === 200) {
+          return { data: res.data['data'], count: res.data['count'] };
+        } else {
+          return false;
+        }
+      })
+      .catch((err) => {
+        return false;
+      });
+  }
+
+
+  //blog post request...
+export function CommentPostRequest(UserName,BlogId,Comment){
+  let URL=BaseUrl+"/comment";
+  let PostBody={UserName,BlogId,Comment}
+
+  return Axios.post(URL,PostBody).then((res)=>{
+      if(res.status===200){
+          return true;
+      }else{
+          return false;
+      }
+  }).catch((err)=>{
+      ErrorToast("Something Went Wrong")
+      return false;
+  })
+}
+
+

@@ -8,7 +8,9 @@ function Login() {
     const [loading, setLoading] = useState(false);
 
     const navigate = useNavigate();
-    const EmailRef = useRef();
+
+  
+  const EmailRef = useRef();
     const PasswordRef = useRef();
 
     const togglePasswordVisibility = () => {

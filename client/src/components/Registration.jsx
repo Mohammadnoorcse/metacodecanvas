@@ -1,6 +1,7 @@
-import React, { Fragment, useRef, useState } from 'react';
+import React, { Fragment, useRef, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ErrorToast, IsEmpty, IsEmail } from '../Helper/FormHelper';
+import { useDropzone } from 'react-dropzone';
+import { ErrorToast, IsEmpty, IsEmail, SuccessToast } from '../Helper/FormHelper';
 import Swal from 'sweetalert2';
 import { RegistrationRequest } from '../ApiRequest/ApiRequest';
 
@@ -9,25 +10,28 @@ const Registration = () => {
     const NameRef = useRef();
     const EmailRef = useRef();
     const PasswordRef = useRef();
-    const ImageRef = useRef();
+    const [image, setImage] = useState(null);
 
     const [showPassword, setShowPassword] = useState(false);
-    const [loading, setLoading] = useState(false);
-
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
+    const onDrop = useCallback((acceptedFiles) => {
+        if (acceptedFiles.length > 0) {
+            setImage(acceptedFiles[0]);
+        }
+    }, []);
+
+    const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: 'image/*' });
+
     const OnRegistration = (event) => {
         event.preventDefault(); // Prevent form submission
-
-        setLoading(true);
 
         const Name = NameRef.current.value;
         const Email = EmailRef.current.value;
         const Password = PasswordRef.current.value;
-        const image = ImageRef.current.files[0];
 
         if (IsEmpty(Name)) {
             ErrorToast("Name Required");
@@ -40,6 +44,8 @@ const Registration = () => {
         } else if (IsEmpty(image)) {
             ErrorToast("Photo Required");
         } else {
+            SuccessToast('Please Wait ...')
+            
             const formData = new FormData();
             formData.append('Name', Name);
             formData.append('Email', Email);
@@ -48,12 +54,11 @@ const Registration = () => {
 
             RegistrationRequest(formData).then((result) => {
                 if (result === true) {
-                    setLoading(false);
                     navigate("/login");
                     NameRef.current.value = "";
                     EmailRef.current.value = "";
                     PasswordRef.current.value = "";
-                    ImageRef.current.value = "";
+                    setImage(null);
                     success();
                 } else {
                     ErrorToast('Something Went Wrong');
@@ -97,13 +102,17 @@ const Registration = () => {
                         </div>
                         <div className="mb-4">
                             <label htmlFor="photo" className="block text-sm font-medium text-white">Photo</label>
-                            <div className="relative">
-                                <input ref={ImageRef} type="file" id="photo" className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            <div {...getRootProps({ className: 'dropzone' })} className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-center">
+                                <input {...getInputProps()} />
+                                {isDragActive ? (
+                                    <p>Drop the image here ...</p>
+                                ) : (
+                                    <p>Drag 'n' drop an image here, or click to select one</p>
+                                )}
                             </div>
+                            {image && <p className="mt-2 text-white">{image.name}</p>}
                         </div>
-                        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" disabled={loading}>
-                        {loading ? "Please Wait..." : "Sign Up"}
-                        </button>
+                        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4">Sign Up</button>
                         <p className="text-xs text-gray-400 mb-4">This site is protected by reCAPTCHA and the Google <a href="#" className="text-blue-400 hover:underline">Privacy Policy</a> and <a href="#" className="text-blue-400 hover:underline">Terms of Service</a> apply.</p>
                         <div className="flex items-center justify-between mb-4">
                             <hr className="w-full border-gray-600" />
