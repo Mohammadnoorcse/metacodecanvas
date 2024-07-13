@@ -27,40 +27,41 @@ import BlogDetails from "./page/BlogDetails";
 const App = () => {
   return (
     <>
-     <BrowserRouter>
-      <Navbar/>
-       <Routes>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course" element={<CourseHome />} />
+          <Route path="/blog/" element={<Blog />} />
+          <Route path="/contest" element={<Contest />} />
+          <Route path="/contest/:title" element={<Quiz />} />
+          <Route path="/blogDetails/:id" element={<BlogDetails />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/language/:header/:subTitle" element={<Language />} />
+          <Route path="/profile" element={<Profile />} />
 
-        <Route path="/" element={<Home/>}/>
-        <Route path="/course" element={<CourseHome/>}/>
-        <Route path="/blog/" element={<Blog/>}/>
-        <Route path="/contest" element={<Contest/>}/>
-        <Route path="/contest/:title" element={<Quiz/>}/>
-        <Route path="/blogDetails/:id" element={<BlogDetails/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path="/registration" element={<Registration/>}/>
-        <Route path="/language/:lang/:title" element={<Language/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-
-
-        <Route path="/deshboard" element={<Deshboard/>}/>
-        <Route path="/deshboard/user/all" element={<User/>}/>
-        <Route path="/deshboard/blog/create" element={<BlogCreate/>}/>
-        <Route path="/deshboard/blog/all" element={<BlogDeshboard/>}/>
-        <Route path="/deshboard/tutorial/all" element={<Tutorial/>}/>
-        <Route path="/deshboard/tutorial/create" element={<TutorialCreate/>}/>
-        <Route path="/deshboard/discussion/all" element={<Discussion/>}/>
-        <Route path="/deshboard/discussion/create" element={<DiscussionCreate/>}/>
-        <Route path="/deshboard/course/all" element={<Course/>}/>
-        <Route path="/deshboard/course/create" element={<CourseCreate/>}/>
-
-       </Routes>
-       <Footer/>
-     </BrowserRouter>
-    
-    
+          <Route path="/deshboard" element={<Deshboard />} />
+          <Route path="/deshboard/user/all" element={<User />} />
+          <Route path="/deshboard/blog/create" element={<BlogCreate />} />
+          <Route path="/deshboard/blog/all" element={<BlogDeshboard />} />
+          <Route path="/deshboard/tutorial/all" element={<Tutorial />} />
+          <Route
+            path="/deshboard/tutorial/create"
+            element={<TutorialCreate />}
+          />
+          <Route path="/deshboard/discussion/all" element={<Discussion />} />
+          <Route
+            path="/deshboard/discussion/create"
+            element={<DiscussionCreate />}
+          />
+          <Route path="/deshboard/course/all" element={<Course />} />
+          <Route path="/deshboard/course/create" element={<CourseCreate />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App
