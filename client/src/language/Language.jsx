@@ -28,7 +28,7 @@ const code=[
 
 const Language = () => {
 
-    const {lang,title} = useParams();
+    const { header, subTitle } = useParams();
     const [mobaileView,setMobaile] = useState(false);
     const navigate = useNavigate();
 
@@ -42,7 +42,7 @@ const Language = () => {
          {/* sideitem */}
          {Data.map((value)=>(
            <div key={value._id} className="sideitem w-full py-1 text-center hover:bg-gray-700 cursor-pointer rounded-lg ">
-           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${lang}/${value.subTitle}`)}>{lang} {value.subTitle}</span>
+           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${header}/${value.subTitle}`)}>{header} {value.subTitle}</span>
        </div>
          ))}
         
@@ -57,7 +57,7 @@ const Language = () => {
         
          {Data.map((value)=>(
            <div key={value._id} className="sideitem w-full py-1 text-center hover:bg-gray-700 cursor-pointer rounded-lg ">
-           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${lang}/${value.subTitle}`)}>{lang} {value.subTitle}</span>
+           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${header}/${value.subTitle}`)}>{header} {value.subTitle}</span>
        </div>
          ))}
         
