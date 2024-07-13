@@ -1,10 +1,12 @@
 
 import "./language.css";
 import {Data} from "../Data/Data";
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {FaBars} from "react-icons/fa"
 import { useState } from "react";
+
+
 
 const code=[
     {
@@ -25,11 +27,12 @@ const code=[
 ]
 
 const Language = () => {
-    const {id} = useParams();
+
+    const {lang,title} = useParams();
     const [mobaileView,setMobaile] = useState(false);
-    const onClickHandlar = ()=>{
-      //get(now params ,name)
-    }
+    const navigate = useNavigate();
+
+   
   return (
     <div className="width-100 h-auto text-white w-center lanaguage ">
       <div className="container-content relative flex  md:gap-5 gap-3">
@@ -39,7 +42,7 @@ const Language = () => {
          {/* sideitem */}
          {Data.map((value)=>(
            <div key={value._id} className="sideitem w-full py-1 text-center hover:bg-gray-700 cursor-pointer rounded-lg ">
-           <span className="text-gray-400 hover:text-white" onClick={onClickHandlar}>{id} {value.subTitle}</span>
+           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${lang}/${value.subTitle}`)}>{lang} {value.subTitle}</span>
        </div>
          ))}
         
@@ -54,7 +57,7 @@ const Language = () => {
         
          {Data.map((value)=>(
            <div key={value._id} className="sideitem w-full py-1 text-center hover:bg-gray-700 cursor-pointer rounded-lg ">
-           <span className="text-gray-400 hover:text-white" onClick={onClickHandlar}>{id} {value.subTitle}</span>
+           <span className="text-gray-400 hover:text-white" onClick={()=>navigate(`/language/${lang}/${value.subTitle}`)}>{lang} {value.subTitle}</span>
        </div>
          ))}
         
