@@ -5,7 +5,7 @@ export const Data = [
    {
     _id:1,
     header:"HTML",
-    language:"eng",
+    language:"english",
     subTitle:'introduction',
     content:[
         {
