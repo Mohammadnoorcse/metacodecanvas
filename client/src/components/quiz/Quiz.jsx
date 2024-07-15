@@ -52,7 +52,7 @@ const Quiz = () => {
 
         setTimeout(() => {
             const nextQuestion = currentQuestion + 1;
-            if (nextQuestion < quizData.length) { // Correct variable reference
+            if (nextQuestion < quizData.length) { 
                 setCurrentQuestion(nextQuestion);
             } else {
                 setShowResult(true);
