@@ -37,7 +37,7 @@ const Quiz = () => {
             }
             setIsAnswering(false);
             setSelectedAnswer(null);
-        }, 1000); // 1000 milliseconds = 1 second
+        }, 1000);
     };
 
     useEffect(() => {
