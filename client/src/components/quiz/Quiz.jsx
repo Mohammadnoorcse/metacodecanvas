@@ -41,7 +41,7 @@ const Quiz = () => {
     const [isAnswering, setIsAnswering] = useState(false); 
     const [selectedAnswer, setSelectedAnswer] = useState(null);
     const [endQuiz, setEndQuiz] = useState(false);
-    const [quizData, setQuizData] = useState(null); // Initialize as null
+    const [quizData, setQuizData] = useState(null);
 
     const handleAnswerOptionClick = (isCorrect, index) => {
         setIsAnswering(true);
