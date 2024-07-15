@@ -24,7 +24,8 @@ const tutorialSchema = new mongoose.Schema({
         required: true
       },
       code: {
-        type: String
+        type: String,
+        default:null
       }
     }
   ]
