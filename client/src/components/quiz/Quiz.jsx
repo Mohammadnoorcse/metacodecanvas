@@ -69,7 +69,7 @@ const Quiz = () => {
             const response = await axios.get(
               `http://localhost:8000/api/v1/ReadQuizByHeader?header=${title}`
             );
-            setQuizData(response.data.data); // Wrap data in an array
+            setQuizData(response.data.data);
           } catch (error) {
             console.error(error);
           }
