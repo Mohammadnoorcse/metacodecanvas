@@ -4,7 +4,8 @@ import {Data} from "../Data/Data";
 import {useParams,useNavigate} from "react-router-dom";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import {FaBars} from "react-icons/fa"
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 
 
@@ -29,8 +30,28 @@ const code=[
 const Language = () => {
 
     const { header, subTitle } = useParams();
+    const [tutorialData, setTutorialData] = useState([]);
     const [mobaileView,setMobaile] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+      async function fetchTutorial() {
+        try {
+          const response = await axios.get(
+            `http://localhost:8000/api/v1/ReadTutorialByHeaderAndSubtitle?header=${header}&subTitle=${subTitle}`
+          );
+          setTutorialData(response);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      fetchTutorial();
+    }, [header, subTitle]);
+
+    console.log(tutorialData);
+
+    
+
 
    
   return (

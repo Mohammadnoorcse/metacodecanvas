@@ -277,3 +277,22 @@ exports.ReadQuizByHeader = async (req, res) => {
     res.status(400).json({ status: "fail", data: err });
   }
 };
+
+//tutorial fetch by header and subtitle
+exports.ReadTutorialByHeaderAndSubtitle = async (req, res) => {
+  try {
+    let header = req.query.header;
+    let subTitle = req.query.subTitle;
+    // let subTitle = req.query.subTitle;
+    let query = { header: header,subTitle:subTitle };
+
+    let data = await TutorialModel.find(query);
+
+    res.status(200).json({ status: "success", data: data });
+  } catch (err) {
+    res.status(400).json({ status: "fail", data: err });
+  }
+};
+
+
+
