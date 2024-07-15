@@ -80,7 +80,7 @@ export const Data = [
     _id:6,
     header:"HTML",
     language:"eng",
-    subTitle:'introduction',
+    subTitle:'introduct',
     content:[
         {
             title:"What is HTML?",
