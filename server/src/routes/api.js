@@ -19,6 +19,7 @@ router.post('/createQuizQuestion',UserController.createQuizQuestion);
 router.post('/createQuizQuestion',UserController.createQuizQuestion);
 router.get('/ReadQuizByHeader',UserController.ReadQuizByHeader);
 router.get('/ReadTutorialByHeaderAndSubtitle', UserController.ReadTutorialByHeaderAndSubtitle);
+router.get('/ReadTutorialByHeader', UserController.ReadTutorialByHeader);
 
 
 module.exports = router;

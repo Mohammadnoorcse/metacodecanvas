@@ -9,6 +9,7 @@ const TutorialCreate = () => {
   const [subTitle, setSubTitle] = useState("");
   const [subDescriptionData, setSubDescription] = useState([{ title: "", description: "", code: "" }]);
   const [codeItem, setCodeItem] = useState(false);
+  const [indexItem,setIndexItem] = useState(0);
 
   const headeries = [
     "html",
@@ -29,7 +30,10 @@ const TutorialCreate = () => {
 
   const handleAddSubDescription = () => {
     setSubDescription([...subDescriptionData, { title: "", description: "", code: "" }]);
+    setIndexItem((prevIndex) => prevIndex + 1);
+   
   };
+  console.log(indexItem);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,14 +77,20 @@ const TutorialCreate = () => {
       icon: "success"
     });
   };
+ 
 
   return (
     <div className="w-full min-h-screen w-center bg-color">
       <div className="container-content flex justify-center items-center flex-col gap-2">
-        <h1 className="text-white text-xl font-bold pt-3 text-center">Tutorial Create</h1>
-        <form onSubmit={handleSubmit} className="w-full md:w-[60%] max-h-screen flex flex-col gap-3 bg-gray-900 rounded-xl mb-[1rem] p-[1rem] overflow-y-auto scrollbar-hide">
+        <h1 className="text-white text-xl font-bold pt-3 text-center">
+          Tutorial Create
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="w-full md:w-[60%] max-h-screen flex flex-col gap-3 bg-gray-900 rounded-xl mb-[1rem] p-[1rem] overflow-y-auto scrollbar-hide"
+        >
           <div className="w-full">
-            <select 
+            <select
               onChange={(e) => setHeadername(e.target.value)}
               value={headername}
               className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-1 px-2 flex items-center max-h-10 overflow-y-auto"
@@ -93,8 +103,7 @@ const TutorialCreate = () => {
               ))}
             </select>
           </div>
-          <div className="w-full">
-          </div>
+          <div className="w-full"></div>
           <div className="w-full">
             <input
               type="text"
@@ -136,9 +145,14 @@ const TutorialCreate = () => {
                         name={`code${index}`}
                         value="Null"
                         checked={!codeItem}
-                        onChange={() => setCodeItem(false)}
+                        onChange={() =>
+                          setCodeItem(false)
+                        }
                       />
-                      <label htmlFor={`null${index}`} className="text-gray-400"> I don't want code</label>
+                      <label htmlFor={`null${index}`} className="text-gray-400">
+                        {" "}
+                        I don't want code
+                      </label>
                     </div>
                     <div>
                       <input
@@ -147,9 +161,14 @@ const TutorialCreate = () => {
                         name={`code${index}`}
                         value="Yes"
                         checked={codeItem}
-                        onChange={() => setCodeItem(true)}
+                        onChange={() =>
+                          setCodeItem( true)
+                        }
                       />
-                      <label htmlFor={`yes${index}`} className="text-gray-400"> I want code</label>
+                      <label htmlFor={`yes${index}`} className="text-gray-400">
+                        {" "}
+                        I want code
+                      </label>
                     </div>
                   </div>
                   <div className={codeItem ? "w-full" : "hidden"}>
