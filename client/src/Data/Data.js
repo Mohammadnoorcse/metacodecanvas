@@ -5,13 +5,13 @@ export const Data = [
    {
     _id:1,
     header:"HTML",
-    language:"eng",
+    language:"english",
     subTitle:'introduction',
     content:[
         {
             title:"What is HTML?",
-            decription:""
-
+            decription:"",
+            code:""
         },
     ],
 
@@ -24,7 +24,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -38,7 +39,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -52,7 +54,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -66,7 +69,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -76,11 +80,12 @@ export const Data = [
     _id:6,
     header:"HTML",
     language:"eng",
-    subTitle:'introduction',
+    subTitle:'introduct',
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -94,7 +99,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -108,7 +114,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -122,7 +129,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -136,7 +144,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -150,7 +159,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -164,7 +174,8 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
 
         },
     ],
@@ -178,7 +189,201 @@ export const Data = [
     content:[
         {
             title:"What is HTML?",
-            decription:""
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+    {_id:14,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+        },
+    ],
+
+   },
+   {
+    _id:15,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:16,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:17,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:18,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:19,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:20,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:21,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:22,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:23,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:24,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:25,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
+
+        },
+    ],
+
+   },
+   {
+    _id:26,
+    header:"HTML",
+    language:"eng",
+    subTitle:'introduction',
+    content:[
+        {
+            title:"What is HTML?",
+            decription:"",
+            code:""
 
         },
     ],
