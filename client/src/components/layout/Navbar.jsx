@@ -9,9 +9,9 @@ import { getUserDetails, removeUserSessions } from "../../Helper/SessionHelperUs
 const Navbar = () => {
   const navigate = useNavigate();
   const [drop,setDrop] = useState(false);
-
+ //server controler
   const user = true;
-  const admin = true;
+  const admin = false;  
 
   const UserDetails=getUserDetails();
 
