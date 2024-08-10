@@ -10,10 +10,8 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [drop,setDrop] = useState(false);
  //server controler
-  const user = true;
-  const admin = false;  
 
-  const UserDetails=getUserDetails();
+ const UserDetails=getUserDetails();
 
   const onLogout=()=>{
     removeUserSessions();
@@ -42,12 +40,11 @@ const Navbar = () => {
        
         </select>
           </div>
-          {user?admin?<>
-              <img src={profile} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
+          {UserDetails?UserDetails.Role==="Admin"?<>
+              <img src={UserDetails.imageUrl} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
               <div className={drop?"absolute  flex flex-col  gap-1 drop-item":"hidden"}>
                 <Link to="/profile">Profile</Link>
                 <Link to="/deshboard">Deshboard</Link>
-                <Link to="/">Profile</Link>
                 {UserDetails ? (
                 <Link to={''} onClick={onLogout}>Logout</Link>
                 ) : (
@@ -57,11 +54,14 @@ const Navbar = () => {
           
           </>:
           <>
-          <img src={profile} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
+          <img src={UserDetails.imageUrl} alt="profile"  className="w-10 h-10 rounded-full cursor-pointer" onClick={()=>setDrop(!drop)}/>
           <div className={drop?"absolute  flex flex-col  gap-1 drop-item":"hidden"}>
             <Link to="/profile">Profile</Link>
-            <Link to="/">Profile</Link>
-            <Link to="/">Profile</Link>
+            {UserDetails ? (
+                <Link to={''} onClick={onLogout}>Logout</Link>
+                ) : (
+                  <Link to={'/login'}>Login</Link>
+                )}
           </div>
       
       </>

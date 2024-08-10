@@ -38,7 +38,7 @@ const Blog = () => {
 
   const pageCount = Math.ceil(searchResults.length / resultsPerPage);
 
-  const changePage = ({ selected }) => {
+  const changePage = ({ selected }) => { 
     setPageNumber(selected);
   };
 
@@ -80,7 +80,7 @@ const Blog = () => {
           {displayProduct.map((value, key) => (
             <Link to={`/blogDetails/${value._id}`} key={key}>
               <div className="bg-gray-800 p-4 rounded-lg mb-2">
-                <h2 className="text-2xl mb-2">{value.Title}</h2> {/* Ensure the field name matches your data */}
+                <h2 className="text-2xl mb-2">{value.Title}</h2> 
                 <p className='mb-3'><i>{value.Description}</i></p> {/* Ensure the field name matches your data */}
                 <p className="text-3xl cursor-pointer"><FaComments /></p>
               </div>
