@@ -11,7 +11,7 @@ const Navbar = () => {
   const [drop,setDrop] = useState(false);
 
   const user = true;
-  const admin = true;
+  const admin = false;
 
   const UserDetails=getUserDetails();
 
