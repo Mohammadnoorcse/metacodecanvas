@@ -293,6 +293,20 @@ exports.ReadTutorialByHeaderAndSubtitle = async (req, res) => {
     res.status(400).json({ status: "fail", data: err });
   }
 };
+exports.ReadTutorialByHeader = async (req, res) => {
+  try {
+    let header = req.query.header;
+    
+    // let subTitle = req.query.subTitle;
+    let query = { header: header};
+
+    let data = await TutorialModel.find(query);
+
+    res.status(200).json({ status: "success", data: data });
+  } catch (err) {
+    res.status(400).json({ status: "fail", data: err });
+  }
+};
 
 
 
