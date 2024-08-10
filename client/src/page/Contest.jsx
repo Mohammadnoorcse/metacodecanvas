@@ -7,9 +7,8 @@ const Contest = () => {
             {HeaderCard.map((value)=>(
                 <>
                 <Link to={`/contest/${value.name}`} key={value._id} className="flex justify-center items-center rounded-xl cursor-pointer " >
-                  <div   style={{backgroundColor:`${value.bg}`}}  className="w-full h-full flex justify-center items-center rounded-xl cursor-pointer">
-                       <span className="text-center text-bg-400 font-bold">{value.name}</span>
-                   
+                  <div style={{backgroundColor:`${value.bg}`}}  className="w-full h-full flex justify-center items-center rounded-xl cursor-pointer">
+                      <span className="text-center text-bg-400 font-bold">{value.name}</span>
                   </div>
                   </Link>
                 </>

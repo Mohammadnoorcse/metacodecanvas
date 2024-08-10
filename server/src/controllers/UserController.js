@@ -48,7 +48,7 @@ exports.UserLogin = (req, res) => {
   
   UsersModel.aggregate([
       { $match: reqBody },
-      { $project: { _id: 0, Email: 1, imageUrl: 1, Name: 1 } }
+      { $project: { _id: 0, Email: 1, imageUrl: 1, Name: 1,Role:1 } }
   ])
   .then((data) => {
       if (data.length > 0) {

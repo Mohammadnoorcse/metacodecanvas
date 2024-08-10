@@ -12,12 +12,12 @@ const Profile = () => {
 
   useEffect(() => {
     if (!userDetails) {
-      navigate('/login'); // Redirect to login page if userDetails is false or undefined
+      navigate('/login');
     }
   }, [userDetails, navigate]);
 
   if (!userDetails) {
-    return null; // Optionally render nothing while redirecting
+    return null;
   }
 
   const UserEmail = userDetails.Email;
