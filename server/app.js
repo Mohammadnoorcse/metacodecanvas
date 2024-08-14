@@ -84,13 +84,14 @@ mongoose.set('strictQuery', true);
 
 // Implement security middlewar
 // this change this code
-app.use(cors({
-  origin: "https://metacodecanvas.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
+// app.use(cors({
+//   origin: "https://metacodecanvas.vercel.app",
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ['Content-Type', 'Authorization'],
+//   credentials: true,
 
-}));
+// }));
+app.use(cors());
 app.use(hpp());
 app.use(xss());
 app.use(mongoSanitize());
