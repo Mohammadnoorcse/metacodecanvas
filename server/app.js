@@ -97,6 +97,7 @@ app.use(mongoSanitize());
 app.use(helmet());
 
 // Set custom headers for CORS (if needed)
+// add
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "https://metacodecanvas.vercel.app");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
