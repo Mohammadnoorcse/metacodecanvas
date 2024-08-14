@@ -154,4 +154,36 @@ export function CommentPostRequest(UserName,BlogId,Comment){
   })
 }
 
+export function GetVideo(videoCategory){
+  const URL = `${BaseUrl}/getVideo?videoCategory=${videoCategory}`;
+  return Axios.get(URL).then((res)=>{
+    if(res.status === 200){
+      return res.data['data'];
+    } else {
+      return false;
+    }
+  }).catch((err)=>{
+    return false;
+  });
+}
+
+//video upload
+export function PostRequest(data){
+  // let URL="http://localhost:5000/api/v1/postVideo"
+  let URL=BaseUrl+"/CourseVideo";
+
+  return Axios.post(URL,data).then((res)=>{
+      
+      if(res.status===200){
+          return true;
+      }else{
+          return false;
+      }
+  }).catch((err)=>{
+      
+      console.log(err);
+      return false;
+  })
+}
+
 

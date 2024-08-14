@@ -8,6 +8,7 @@ const jwt=require('jsonwebtoken');
 const CommentModel = require('../models/CommentModel');
 const ReplyModel = require('../models/ReplyModel');
 const QuizModel = require('../models/QuizModel');
+const CourseModel = require('../models/CourseModel');
 
 
 
@@ -307,6 +308,58 @@ exports.ReadTutorialByHeader = async (req, res) => {
     res.status(400).json({ status: "fail", data: err });
   }
 };
+
+//Course Video
+exports.CourseVideo = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ message: "No file attached" });
+    }
+
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      resource_type: "video",
+      folder: "MetaCodeCanvas/CourseVideo"
+    });
+
+    // Save video to MongoDB
+    const video = new CourseModel({
+      videoCategory: req.body.videoCategory,
+      title: req.body.title,
+      videoUrl: result.secure_url,
+      cloudinary_id: result.public_id
+    });
+
+    await video.save();
+
+    res.status(200).json({ status: "success", data: video });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Server error" });
+  }
+};
+
+
+exports.GetVideo = async (req, res) => {
+  try {
+    let videoCategory = req.query.videoCategory;  // Access query parameter
+    let query = { videoCategory: videoCategory };
+
+    const videos = await CourseModel.find(query);
+
+    if (!videos.length) {
+      return res.status(404).json({ status: "fail", data: "Not Found" });
+    }
+
+    res.status(200).json({ data: videos });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ status: "fail", data: err.message });
+  }
+};
+
+
+
+
 
 
 

@@ -22,6 +22,8 @@ import CourseHome from "./page/CourseHome";
 import Contest from "./page/Contest";
 import Quiz from "./components/quiz/Quiz";
 import BlogDetails from "./page/BlogDetails";
+import Player from "./page/Player";
+import CourseList from "./page/CourseList";
 
 
 const App = () => {
@@ -33,6 +35,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/course" element={<CourseHome />} />
           <Route path="/blog/" element={<Blog />} />
+          <Route path="/course/:videoCategory" element={<Player />} />
+          <Route path="/courseList/" element={<CourseList />} />
           <Route path="/contest" element={<Contest />} />
           <Route path="/contest/:title" element={<Quiz />} />
           <Route path="/blogDetails/:id" element={<BlogDetails />} />
