@@ -1,66 +1,105 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { ErrorToast, IsEmpty, SuccessToast } from '../../Helper/FormHelper';
+import { PostRequest } from '../../ApiRequest/ApiRequest';
 
 const CourseCreate = () => {
-  const [videoCat,setVideoCat] = useState("");
-  const [title,setTitle] = useState("");
+  const [videoCat, setVideoCat] = useState('');
+  const [title, setTitle] = useState('');
   const [videoFile, setVideoFile] = useState(null);
-    const videoItem = [
-      "html",
-      "css",
-      "python",
-      "c",
-      "c++",
-      "java",
-      "javascript",
-    ];
-    
+
+  const videoCategories = [
+    'html',
+    'css',
+    'python',
+    'c',
+    'c++',
+    'java',
+    'javascript',
+    'php',
+  ];
+
+  const handleUpload = (e) => {
+    e.preventDefault();
+
+    if (IsEmpty(videoCat)) {
+      ErrorToast('Category Is Required');
+      return;
+    }
+    if (IsEmpty(title)) {
+      ErrorToast('Title Is Required');
+      return;
+    }
+    if (!videoFile) {
+      ErrorToast('Video Is Required');
+      return;
+    }
+
+    SuccessToast('Please Wait...');
+    const formData = new FormData();
+    formData.append('file', videoFile);
+    formData.append('title', title);
+    formData.append('videoCategory', videoCat);
+
+    PostRequest(formData).then((result) => {
+      if (result === true) {
+        SuccessToast('Video Upload Success!');
+        setTitle('');
+        setVideoCat('');
+        setVideoFile('');
+      } else {
+        ErrorToast('Something Went Wrong');
+        console.log('Something went wrong');
+      }
+    });
+  };
+
   return (
-    <div className="w-full min-h-screen w-center bg-color">
-      <div className="container-content flex justify-center items-center flex-col gap-2">
-        <h1 className="text-white text-xl font-bold pt-3 text-center">
+    <div className="w-full min-h-screen bg-color flex justify-center items-center">
+      <div className="w-full md:w-2/3 max-w-lg bg-gray-900 rounded-xl p-6 flex flex-col gap-4">
+        <h1 className="text-white text-2xl font-bold pt-3 text-center">
           Course Create
         </h1>
-        <form
-          action=""
-          className="w-full md:w-[60%] max-h-screen flex flex-col gap-3 bg-gray-900 rounded-xl mb-[1rem] p-[1rem] overflow-y-auto scrollbar-hide"
-        >
-          <div className="w-full">
+        <form onSubmit={handleUpload} className="flex flex-col gap-4">
+          <div>
+            <label className="block text-gray-400 mb-2">Category</label>
             <select
               onChange={(e) => setVideoCat(e.target.value)}
               value={videoCat}
-              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-1 px-2 flex items-center max-h-10 overflow-y-auto"
+              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-2 px-3"
             >
               <option value="">Choose Category</option>
-              {videoItem.map((cate) => (
-                <option key={cate} value={cate} className="py-1 cursor-pointer">
-                  {cate}
+              {videoCategories.map((category) => (
+                <option key={category} value={category} className="py-1">
+                  {category}
                 </option>
               ))}
             </select>
           </div>
 
-          <div className="w-full">
+          <div>
+            <label className="block text-gray-400 mb-2">Title</label>
             <input
               type="text"
               placeholder="Enter the Video Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-1 px-2"
+              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-2 px-3"
             />
           </div>
-          <div className="w-full">
+
+          <div>
+            <label className="block text-gray-400 mb-2">Video File</label>
             <input
               type="file"
               accept="video/*"
-              placeholder="Enter the Video Title"
-              // value={videoFile}
               onChange={(e) => setVideoFile(e.target.files[0])}
-              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-1 px-2"
+              className="w-full outline-none bg-gray-800 rounded-xl text-gray-400 hover:text-white py-2 px-3"
             />
           </div>
+
           <button
             type="submit"
-            className="text-gray-400 hover:text-white cursor-pointer"
+            className="w-full bg-blue-600 text-white py-2 rounded-xl hover:bg-blue-700 transition duration-200"
           >
             Submit
           </button>
@@ -68,6 +107,6 @@ const CourseCreate = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CourseCreate
+export default CourseCreate;
