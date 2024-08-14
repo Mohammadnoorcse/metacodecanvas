@@ -42,7 +42,11 @@ const DiscussionCreate = () => {
       answerOptions
     };
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/createQuizQuestion', payload);
+      // const response = await axios.post('http://localhost:8000/api/v1/createQuizQuestion', payload);
+      const response = await axios.post(
+        "https://metacodecanvas-dvz3.vercel.app/api/v1/createQuizQuestion",
+        payload
+      );
       SuccessToast("Question Set Successfully");
       resetForm(); // Reset form after successful submission
     } catch (error) {
