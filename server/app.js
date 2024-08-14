@@ -82,10 +82,12 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 
-// Implement security middleware
+// Implement security middlewar
+// this change this code
 app.use(cors({
   origin: "https://metacodecanvas.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
 app.use(hpp());
