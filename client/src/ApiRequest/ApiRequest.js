@@ -3,7 +3,8 @@ import { ErrorToast, SuccessToast } from '../Helper/FormHelper';
 // import { getToken, setEmail, setOTP, setRenterDetails, setToken } from '../Helper/SessionHelperPublisher';
 import { setUserDetails } from '../Helper/SessionHelperUser';
 // const AxiosHeader={headers:{"token":getToken()}}
-const BaseUrl="http://localhost:8000/api/v1"
+// const BaseUrl="http://localhost:8000/api/v1"
+const BaseUrl="https://metacodecanvas-dvz3.vercel.app/api/v1"
 
 
 

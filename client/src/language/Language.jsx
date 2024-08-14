@@ -36,7 +36,7 @@ const Language = () => {
     async function fetchHeader() {
       try {
         const res = await axios.get(
-          `http://localhost:8000/api/v1/ReadTutorialByHeader?header=${header}`
+          `https://metacodecanvas-dvz3.vercel.app/api/v1/ReadTutorialByHeader?header=${header}`
         );
         setHeaderData(res.data.data);
       } catch (error) {
@@ -48,7 +48,7 @@ const Language = () => {
     async function fetchTutorial() {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/ReadTutorialByHeaderAndSubtitle?header=${header}&subTitle=${subTitle}`
+          `https://metacodecanvas-dvz3.vercel.app/api/v1/ReadTutorialByHeaderAndSubtitle?header=${header}&subTitle=${subTitle}`
         );
         setTutorialData(response.data.data);
       } catch (error) {
