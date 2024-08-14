@@ -16,7 +16,11 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
 
 // Implement security middleware
-app.use(cors());
+app.use(cors({
+  origin:["https://metacodecanvas.vercel.app/"],
+  methods:["GET","POST","PUT","DELETE"],
+  credentials:true
+}));
 app.use(hpp());
 app.use(xss());
 app.use(mongoSanitize());
