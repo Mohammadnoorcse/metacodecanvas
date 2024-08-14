@@ -27,7 +27,7 @@ const Navbar = () => {
             <Link to="/" className="text-xl font-bold italic cursor-pointer">MetaCodeCanvas</Link>
             </div>
              <div className="gap-5 course-item ">
-              <Link to="/course">Course</Link>
+              <Link to="/courseList">Course</Link>
               <Link to="/blog">Blog</Link>
               <Link to="/contest">Contest</Link>
              </div>
