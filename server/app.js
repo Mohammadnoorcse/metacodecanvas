@@ -88,13 +88,22 @@ app.use(cors({
   origin: "https://metacodecanvas.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  credentials: true,
+
 }));
 app.use(hpp());
 app.use(xss());
 app.use(mongoSanitize());
 app.use(helmet());
 
+// Set custom headers for CORS (if needed)
+// add
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://metacodecanvas.vercel.app");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  next();
+});
 
 // JSON object limit
 app.use(express.json({ limit: '10mb' }));
@@ -126,10 +135,7 @@ mongoose
 // Routing Implementation
 app.use("/api/v1", router);
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
+
 
 // Undefined Route Implementation
 app.use('*', (req, res) => {
