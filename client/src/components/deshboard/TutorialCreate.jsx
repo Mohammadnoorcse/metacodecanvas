@@ -45,13 +45,16 @@ const TutorialCreate = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/api/v1/createTutorial", {   
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(tutorialData),
-      });
+      const response = await fetch(
+        "https://metacodecanvas-dvz3.vercel.app/api/v1/createTutorial",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(tutorialData),
+        }
+      );
 
       const data = await response.json();
       if (response.ok) {
